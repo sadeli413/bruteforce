@@ -10,7 +10,7 @@ aac
 etc...
 
 Since there are 94 ascii characters
-```!"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~```
+```!"#$%&'()*+,-./0123456789:\;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~```
 You can treat a brute force algorithm like a base 94 counting system, where ```! == 0``` and ```~ == 93``` and so forth.\
 To do this base 94 system, loop through each digit in you number, and keep track of your places. In base ten, that is ones place, tens place, hundreds place, etc. In base 94 that is ones place, 94 place, 94^2 place, 95^3 place, etc. So as you loop, keep track of total count. For example, every 94^4 time, the fourth digit to the right increments by one. Every 94^1 time, the first digit to the right increments by one every 94^0 time, the rightmost digit increments by one (that's every time)\
 Besides keeping track of total count and places, you need to keep track of the size, where the size is the number of digits. Every 94^size time, add another ! digit to the left.\
